@@ -1,0 +1,43 @@
+---
+- name: Machine setup
+  hosts: localhost
+  become: true
+  connection: local
+  gather_facts: true
+
+  tasks:
+    - name: Get my user
+      ansible.builtin.set_fact:
+        remote_regular_user: "{{ ansible_env.SUDO_USER or ansible_user_id }}"
+
+    - name: Install packages
+      ansible.builtin.dnf:
+        name:
+          - git
+          - vim
+          - gcc
+          - ripgrep
+          - zsh
+          - fzf
+          - ffmpeg-free
+          - gcc-c++
+          - wezterm
+        state: present
+
+    - name: Change shell to zsh
+      ansible.builtin.user:
+        name: "{{ remote_regular_user }}"
+        shell: /usr/bin/zsh
+
+    - name: Install DNF plugins core
+      ansible.builtin.dnf:
+        name: dnf-plugins-core
+        state: present
+
+    - name: Install Flatpak packages
+      community.general.flatpak:
+        name:
+          - org.videolan.VLC
+          - md.obsidian.Obsidian
+          - rest.insomnia.Insomnia
+        state: present
