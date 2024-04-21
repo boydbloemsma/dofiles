@@ -108,6 +108,9 @@ alias art="php artisan"
 alias split="wezterm cli split-pane"
 alias vsplit="wezterm cli split-pane --right"
 
+export PATH
+PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
+
 # alias vim="nvim"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
@@ -131,3 +134,4 @@ export NVM_DIR="/Users/boydbloemsma/Library/Application Support/Herd/config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 [[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] && builtin source "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh"
+
