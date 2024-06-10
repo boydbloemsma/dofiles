@@ -18,10 +18,6 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize -2<CR>")
 -- Select all
 vim.keymap.set("n", "<C-a>", 'ggVG')
 
--- Move code
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-
 -- LSP
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),

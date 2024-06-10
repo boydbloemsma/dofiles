@@ -34,41 +34,42 @@ config.keys = {
     },
 }
 
-local animes = {
-    "lycoreco.jpg",
-    "frieren.jpg",
-    "mdud.jpg",
-}
-
-local anime_base_path = "/home/boyd/.anime/"
-if wezterm.target_triple:find("darwin") ~= nil then
-    anime_base_path = "/Users/boydbloemsma/.anime/"
-end
-
-local dimmer = {
-    brightness = 0.1,
-    hue = 1,
-    saturation = 1,
-}
-
-config.background = {
-    {
-        source = {
-            File = anime_base_path .. animes[math.random(#animes)],
-        },
-        height = "Cover",
-        hsb = dimmer,
-    }
-}
-
-config.text_background_opacity = 1
-
-config.window_padding = {
-  left = 0,
-  right = 0,
-  top = 0,
-  bottom = 0,
-}
-
+-- local animes = {
+--     "lycoreco.jpg",
+--     "frieren.jpg",
+--     "mdud.jpg",
+-- }
+--
+-- local anime_base_path = "/home/boydbloemsma/.anime/"
+-- if wezterm.target_triple:find("darwin") ~= nil then
+--     anime_base_path = "/Users/boydbloemsma/.anime/"
+-- end
+--
+-- local dimmer = {
+--     brightness = 0.1,
+--     hue = 1,
+--     saturation = 1,
+-- }
+--
+-- config.background = {
+--     {
+--         source = {
+--             File = anime_base_path .. animes[math.random(#animes)],
+--         },
+--         height = "Cover",
+--         hsb = dimmer,
+--     }
+-- }
+--
+-- config.text_background_opacity = 1
+--
+-- config.window_padding = {
+--   left = 0,
+--   right = 0,
+--   top = 0,
+--   bottom = 0,
+-- }
+--
+config.color_scheme = 'Gruvbox Dark (Gogh)'
 
 return config 

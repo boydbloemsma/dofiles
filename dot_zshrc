@@ -135,3 +135,7 @@ export NVM_DIR="/Users/boydbloemsma/Library/Application Support/Herd/config/nvm"
 
 [[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] && builtin source "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh"
 
+alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
+
+
+export PATH=$PATH:$HOME/.local/bin
